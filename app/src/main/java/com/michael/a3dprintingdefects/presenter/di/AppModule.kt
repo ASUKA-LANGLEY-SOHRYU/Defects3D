@@ -12,7 +12,8 @@ val appModule = module{
         MainViewModel(
             getDefectsUseCase = get(),
             defectDetailsMapper = get(),
-            defectListItemMapper = get()
+            defectListItemMapper = get(),
+            defectDetailsToListItemMapper = get()
         )
     }
     factory { DefectListItemMapper(getPictureUrlUseCase = get()) }
