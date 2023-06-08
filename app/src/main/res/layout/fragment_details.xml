@@ -40,17 +40,7 @@
         app:layout_constraintStart_toEndOf="@+id/back"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/defect_picture"
-        android:layout_width="300dp"
-        android:layout_height="230dp"
-        android:maxHeight="400dp"
-        android:maxWidth="500dp"
-        android:layout_marginTop="20dp"
-        android:src="@drawable/progress_bar_default"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/top_view"/>
+
 
     <ScrollView
         android:layout_marginTop="20dp"
@@ -59,13 +49,25 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/defect_picture"
+        app:layout_constraintTop_toBottomOf="@id/defect_name"
         android:layout_marginHorizontal="20dp"
         android:orientation="vertical">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="0dp">
+
+            <ImageView
+                android:id="@+id/defect_picture"
+                android:layout_width="300dp"
+                android:layout_height="230dp"
+                android:maxHeight="400dp"
+                android:maxWidth="500dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/progress_bar_default"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
 
 
             <TextView
@@ -76,7 +78,7 @@
                 android:text="dlsdkgskdlgnslkdjgsdljgslkdjgbsdkljgbsdkjljgbsdkjljgbsdkjgbskjdgbsdkjgbsdkjgbsdkjgbsdkjgbksjdhgfsdfdfsfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfdsfdsfsdfsdfsdfsdf"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/defect_picture"
                 app:layout_constraintBottom_toBottomOf="parent"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
