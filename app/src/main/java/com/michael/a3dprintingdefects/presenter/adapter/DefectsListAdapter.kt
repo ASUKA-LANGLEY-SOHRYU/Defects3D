@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
+import com.bumptech.glide.signature.ObjectKey
 import com.michael.a3dprintingdefects.R
 import com.michael.a3dprintingdefects.databinding.ListItemBinding
 import com.michael.a3dprintingdefects.presenter.model.DefectListItem
@@ -47,7 +48,9 @@ class DefectsListAdapter: RecyclerView.Adapter<DefectsListAdapter.DefectsListVie
                 description.text = defect.description
 
                 Glide.with(itemView.context)
-                    .load(defect.picture_url).transform(RoundedCorners(10))
+                    .load(defect.picture_url)
+                    .signature(ObjectKey(defect.picture_url.hashCode().toString()))
+                    .transform(RoundedCorners(10))
                     .error(R.drawable.ic_launcher_foreground)
                     .placeholder(R.drawable.ic_launcher_foreground)
                     .into(image)

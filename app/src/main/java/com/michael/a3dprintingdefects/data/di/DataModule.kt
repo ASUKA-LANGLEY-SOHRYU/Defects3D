@@ -5,7 +5,8 @@ import com.michael.a3dprintingdefects.data.datasource.api.retrofit.DefectsApiSer
 import com.michael.a3dprintingdefects.data.repository.DefectsRepositoryImpl
 import com.michael.a3dprintingdefects.domain.repository.IDefectsRepository
 import com.michael.a3dprintingdefects.data.mapper.DefectMapper
-import com.michael.a3dprintingdefects.data.okHTTPInterceptor.CachingController
+import com.michael.a3dprintingdefects.data.okHTTP.CachingController
+import com.michael.a3dprintingdefects.data.okHTTP.UnsafeOkHttpClient
 import okhttp3.Cache
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -15,7 +16,7 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.converter.scalars.ScalarsConverterFactory
 
-const val BASE_URL = "https://4c97-2a00-1fa2-44e8-a21a-956-1f35-6a54-77b.ngrok-free.app" //API SERVERS
+const val BASE_URL = "https://46.19.66.5:8080" //API SERVERS
 
 val dataModule = module {
     factory { provideDefectApiService(retrofit = get()) }
@@ -33,7 +34,7 @@ private fun provideClient(cachingControl: CachingController, context: Context): 
     val cacheSize = (10 * 1024 * 1024).toLong()
     val cache = Cache(context.cacheDir, cacheSize)
 
-    return OkHttpClient.Builder()
+    return UnsafeOkHttpClient.getUnsafeOkHttpClientBuilder()
         .addInterceptor(interceptor)
         .addInterceptor(cachingControl.offlineInterceptor)
         .addNetworkInterceptor(cachingControl.onlineInterceptor)

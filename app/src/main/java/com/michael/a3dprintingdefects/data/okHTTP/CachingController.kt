@@ -1,4 +1,4 @@
-package com.michael.a3dprintingdefects.data.okHTTPInterceptor
+package com.michael.a3dprintingdefects.data.okHTTP
 
 import android.content.Context
 import android.net.ConnectivityManager

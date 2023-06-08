@@ -21,6 +21,7 @@ import com.michael.a3dprintingdefects.presenter.mapper.DefectListItemMapper
 import com.michael.a3dprintingdefects.presenter.model.DefectDetails
 import com.michael.a3dprintingdefects.presenter.model.DefectListItem
 import com.michael.a3dprintingdefects.presenter.vm.MainViewModel
+import io.reactivex.Observable
 import org.koin.androidx.viewmodel.ext.android.activityViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
